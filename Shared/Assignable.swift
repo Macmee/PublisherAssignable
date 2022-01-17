@@ -8,18 +8,6 @@
 import Combine
 import SwiftUI
 
-struct TestModel {
-  @Assignable var counter: Int?
-}
-
-struct ContentView: View {
-  @Assignable var counter: Int?
-    var body: some View {
-      Text(counter?.description ?? "n/a")
-            .padding()
-    }
-}
-
 @propertyWrapper
 struct Assignable<T>: DynamicProperty {
   
@@ -35,10 +23,7 @@ struct Assignable<T>: DynamicProperty {
         })
         .store(in: &bag)
     }
-    
-    deinit {
-      print("VVV goodbye")
-    }
+
   }
   
   @StateObject var boxed: Box
@@ -57,6 +42,6 @@ struct Assignable<T>: DynamicProperty {
 
 extension Publisher where Self.Failure == Never {
   func asAssignable() -> Assignable<Output> {
-    .init(self.eraseToAnyPublisher())
+    .init(eraseToAnyPublisher())
   }
 }

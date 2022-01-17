@@ -13,8 +13,8 @@
 		97805F322792872B00821AC2 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F312792872B00821AC2 /* Tests_macOSLaunchTests.swift */; };
 		97805F332792872B00821AC2 /* PublishedViewModelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */; };
 		97805F342792872B00821AC2 /* PublishedViewModelsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */; };
-		97805F352792872B00821AC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0C2792872A00821AC2 /* ContentView.swift */; };
-		97805F362792872B00821AC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0C2792872A00821AC2 /* ContentView.swift */; };
+		97805F352792872B00821AC2 /* Assignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0C2792872A00821AC2 /* Assignable.swift */; };
+		97805F362792872B00821AC2 /* Assignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F0C2792872A00821AC2 /* Assignable.swift */; };
 		97805F372792872B00821AC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97805F0D2792872A00821AC2 /* Assets.xcassets */; };
 		97805F382792872B00821AC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97805F0D2792872A00821AC2 /* Assets.xcassets */; };
 		97805F4827929B4B00821AC2 /* GetReddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F4727929B4B00821AC2 /* GetReddit.swift */; };
@@ -23,6 +23,8 @@
 		97805F4C27929C9F00821AC2 /* SubredditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F4A27929C9F00821AC2 /* SubredditView.swift */; };
 		97805F4E27929CBB00821AC2 /* SubredditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */; };
 		97805F4F27929CBB00821AC2 /* SubredditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */; };
+		97805F51279545EE00821AC2 /* NestedObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F50279545EE00821AC2 /* NestedObservableObject.swift */; };
+		97805F52279545EE00821AC2 /* NestedObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97805F50279545EE00821AC2 /* NestedObservableObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,7 @@
 
 /* Begin PBXFileReference section */
 		97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedViewModelsApp.swift; sourceTree = "<group>"; };
-		97805F0C2792872A00821AC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		97805F0C2792872A00821AC2 /* Assignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignable.swift; sourceTree = "<group>"; };
 		97805F0D2792872A00821AC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97805F122792872A00821AC2 /* PublishedViewModels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublishedViewModels.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97805F182792872A00821AC2 /* PublishedViewModels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublishedViewModels.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +60,7 @@
 		97805F4727929B4B00821AC2 /* GetReddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReddit.swift; sourceTree = "<group>"; };
 		97805F4A27929C9F00821AC2 /* SubredditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditView.swift; sourceTree = "<group>"; };
 		97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditViewModel.swift; sourceTree = "<group>"; };
+		97805F50279545EE00821AC2 /* NestedObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedObservableObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */,
-				97805F0C2792872A00821AC2 /* ContentView.swift */,
+				97805F0C2792872A00821AC2 /* Assignable.swift */,
 				97805F0D2792872A00821AC2 /* Assets.xcassets */,
 				97805F4727929B4B00821AC2 /* GetReddit.swift */,
 				97805F4A27929C9F00821AC2 /* SubredditView.swift */,
 				97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */,
+				97805F50279545EE00821AC2 /* NestedObservableObject.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -311,8 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97805F352792872B00821AC2 /* ContentView.swift in Sources */,
+				97805F352792872B00821AC2 /* Assignable.swift in Sources */,
 				97805F4827929B4B00821AC2 /* GetReddit.swift in Sources */,
+				97805F51279545EE00821AC2 /* NestedObservableObject.swift in Sources */,
 				97805F332792872B00821AC2 /* PublishedViewModelsApp.swift in Sources */,
 				97805F4B27929C9F00821AC2 /* SubredditView.swift in Sources */,
 				97805F4E27929CBB00821AC2 /* SubredditViewModel.swift in Sources */,
@@ -323,8 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97805F362792872B00821AC2 /* ContentView.swift in Sources */,
+				97805F362792872B00821AC2 /* Assignable.swift in Sources */,
 				97805F4927929B4B00821AC2 /* GetReddit.swift in Sources */,
+				97805F52279545EE00821AC2 /* NestedObservableObject.swift in Sources */,
 				97805F342792872B00821AC2 /* PublishedViewModelsApp.swift in Sources */,
 				97805F4C27929C9F00821AC2 /* SubredditView.swift in Sources */,
 				97805F4F27929CBB00821AC2 /* SubredditViewModel.swift in Sources */,

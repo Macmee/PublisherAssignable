@@ -8,21 +8,20 @@
 import Combine
 import Foundation
 
-class SubredditViewModel: ObservableObject {
+class SubredditViewModel: NestedObservableObject {
   
   // MARK: - Inputs
   @Published var subredditInput: String
   
   // MARK: - Outputs
-  @Assignable var postsOutput: [RedditPost]?
+  @Assignable private(set) var postsOutput: [RedditPost]?
   
   // MARK: - Privates
   private var bag = Set<AnyCancellable>()
   
   init(startingSubreddit: String) {
-    var v = Published(wrappedValue: startingSubreddit)
-    _subredditInput = v
-    _postsOutput = v
+    subredditInput = startingSubreddit
+    _postsOutput = _subredditInput
       .projectedValue
       .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
       .prepend(startingSubreddit)
@@ -30,9 +29,7 @@ class SubredditViewModel: ObservableObject {
       .switchToLatest()
       .replaceError(with: [])
       .asAssignable()
-    //_postsOutput.boxed.objectWillChange.sink {
-    //  self.objectWillChange.send()
-    //}.store(in: &bag)
+    super.init()
   }
   
 }
