@@ -43,7 +43,7 @@ extension Combine.Published: DynamicPropertyObserver {
   }
 }
 
-// MARK: - Assignable
+// MARK: - @Assignable
 
 extension Assignable: DynamicPropertyObserver {
   mutating func objectWillChangeObserver() -> AnyPublisher<Void, Never> {

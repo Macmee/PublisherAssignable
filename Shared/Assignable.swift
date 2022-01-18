@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  Assignable.swift
 //  Shared
 //
 //  Created by David Zorychta on 1/14/22.
@@ -14,7 +14,6 @@ struct Assignable<T>: DynamicProperty {
   final class Box: ObservableObject {
     private var bag = Set<AnyCancellable>()
     @Published var value: T?
-    var test: T?
     init(_ upstream: AnyPublisher<T, Never>) {
       upstream
         .receive(on: RunLoop.main)
@@ -23,18 +22,22 @@ struct Assignable<T>: DynamicProperty {
         })
         .store(in: &bag)
     }
-
   }
   
   @StateObject var boxed: Box
   
   var wrappedValue: T? {
     get { boxed.value }
-    set { }
+    nonmutating set { boxed.value = newValue }
   }
   
   init(_ upstream: AnyPublisher<T, Never>) {
     let boxed = Box(upstream)
+    _boxed = .init(wrappedValue: boxed)
+  }
+  
+  init(wrappedValue: T?) {
+    let boxed = Box(Empty<T, Never>().eraseToAnyPublisher())
     _boxed = .init(wrappedValue: boxed)
   }
   
