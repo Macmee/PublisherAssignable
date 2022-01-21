@@ -106,7 +106,7 @@ class SubredditViewModel: NestedObservableObject {
 }
 ```
 
-There are a few important things to note here. Our view model is an observable object with two properties, `subredditInput` and `postsOutput`. As the user types, we bind our `TextField` from our view to `$viewModel.subredditInput`. We observe `subredditInput` in our view model for changes, and then we call `getReddit` to retrieve new reddit posts. This returns a Publisher of `AnyPublisher<[RedditPost, Error]>` and normally we would have to manually listen to this publisher with combine and assign the values it produces to a separate `@Published` property on our view model (`i.e. @Published postsOutput`). Instead, we simply call `.asAssignable()` on our publisher and assign it directly to `_postsOutput`.
+There are a few important things to note here. Our view model is an observable object with two properties, `subredditInput` and `postsOutput`. As the user types, we bind our `TextField` from our view to `subredditInput`. We observe `subredditInput` in our view model for changes, and then we call `getReddit` to retrieve new reddit posts. This returns a Publisher of `AnyPublisher<[RedditPost, Error]>`. Normally we would have to manually listen to this publisher with combine and assign the values it produces to a separate `@Published` property on our view model (`i.e. @Published postsOutput`). Instead, we simply call `.asAssignable()` on our publisher and assign it directly to `_postsOutput`.
 
 The benefits of this are:
 
