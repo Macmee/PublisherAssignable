@@ -139,7 +139,7 @@ The benefits of this are:
 
 * The code is again more concise because we have removed one aspect of complexity
 * The code is safer because the entire functionality taking place may be contained within a single observable chain which does not produce side effects. We don't have to maintain both an observable chain _and_ a separate variable (`posts`) that we manually assign values to after the fact.
-* It is guaranteed that another actor outside our block of code cannot change the value of `postsOutput` unaware to us which is not the case with `@Published` (you could assign anywhere to such a variable or at least anywhere within the same class even if you were to annotate it with `private(set)`). For example, this is not allowed:
+* It is guaranteed that another actor outside our block of code cannot change the value of `postsOutput`. If we had a `@Published` property, anyone from within our viewModel (or perhaps even outside of it if we forgot to use `private(set)`!) could change the value of `postsOutput`. This package instead enforces that `postsOutput` be defined one time only. For example if you were to attempt to change the value of `postsOutput` outside of our observable chain you would encounter this:
 
 ```swift
 class SubredditViewModel: NestedObservableObject {
