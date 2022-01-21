@@ -19,7 +19,7 @@ struct SubredditView: View {
 }
 ```
 
-This is quite verbose because we have to chain on a View with `.onReceive` to observe our publisher, and then when we get results we have to manually assign them to our state variable `posts`. This project adds the `@Assignable` property wrapper so that you can instead do:
+This is quite verbose because we have to chain on a View with `.onReceive` to observe our publisher, and then when we get results we have to manually assign them to our state variable `posts`. It is also not ideal because technically anyone from within our View could assign onto `posts`, meaning we have mutable state and potentially multiple paths in our codebase where it may be mutated. This project adds the `@Assignable` property wrapper so that you can instead do:
 
 ```
 struct SubredditView: View {
