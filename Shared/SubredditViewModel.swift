@@ -14,7 +14,7 @@ class SubredditViewModel: NestedObservableObject {
   @Published var subredditInput: String
   
   // MARK: - Outputs
-  @Assignable private(set) var postsOutput: [RedditPost]?
+  @Assignable var postsOutput: [RedditPost]?
   
   // MARK: - Privates
   private var bag = Set<AnyCancellable>()
@@ -29,6 +29,7 @@ class SubredditViewModel: NestedObservableObject {
       .switchToLatest()
       .replaceError(with: [])
       .asAssignable()
+
     super.init()
   }
   
