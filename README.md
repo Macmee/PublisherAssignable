@@ -74,7 +74,7 @@ struct SubredditView: View {
 ```
 You can imagine building a view model to support this such as:
 
-```
+```swift
 class SubredditViewModel: NestedObservableObject {
   
   // MARK: - Inputs
