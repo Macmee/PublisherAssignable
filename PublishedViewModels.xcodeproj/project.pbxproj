@@ -95,10 +95,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		973C2D29279BAABB00FD2124 /* Assignable */ = {
+			isa = PBXGroup;
+			children = (
+				97805F0C2792872A00821AC2 /* Assignable.swift */,
+				97805F50279545EE00821AC2 /* NestedObservableObject.swift */,
+			);
+			path = Assignable;
+			sourceTree = "<group>";
+		};
+		973C2D2A279BAAD200FD2124 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */,
+				97805F0D2792872A00821AC2 /* Assets.xcassets */,
+				97805F4727929B4B00821AC2 /* GetReddit.swift */,
+				97805F4A27929C9F00821AC2 /* SubredditView.swift */,
+				97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		97805F052792872900821AC2 = {
 			isa = PBXGroup;
 			children = (
-				97805F0A2792872A00821AC2 /* Shared */,
+				97805F0A2792872A00821AC2 /* Sources */,
 				97805F192792872A00821AC2 /* macOS */,
 				97805F222792872B00821AC2 /* Tests iOS */,
 				97805F2E2792872B00821AC2 /* Tests macOS */,
@@ -106,18 +127,13 @@
 			);
 			sourceTree = "<group>";
 		};
-		97805F0A2792872A00821AC2 /* Shared */ = {
+		97805F0A2792872A00821AC2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				97805F0B2792872A00821AC2 /* PublishedViewModelsApp.swift */,
-				97805F0C2792872A00821AC2 /* Assignable.swift */,
-				97805F0D2792872A00821AC2 /* Assets.xcassets */,
-				97805F4727929B4B00821AC2 /* GetReddit.swift */,
-				97805F4A27929C9F00821AC2 /* SubredditView.swift */,
-				97805F4D27929CBB00821AC2 /* SubredditViewModel.swift */,
-				97805F50279545EE00821AC2 /* NestedObservableObject.swift */,
+				973C2D2A279BAAD200FD2124 /* Example */,
+				973C2D29279BAABB00FD2124 /* Assignable */,
 			);
-			path = Shared;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		97805F132792872A00821AC2 /* Products */ = {
