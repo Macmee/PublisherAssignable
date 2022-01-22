@@ -14,7 +14,7 @@ open class NestedObservableObject: ObservableObject {
 
   private var bag = Set<AnyCancellable>()
 
-  init() {
+  public init() {
     Mirror(reflecting: self).children.forEach { property in
       if var value = property.value as? DynamicPropertyObserver {
         value
