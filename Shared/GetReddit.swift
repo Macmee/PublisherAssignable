@@ -15,13 +15,11 @@ struct RedditPost: Decodable, Identifiable {
   let author: String
   let created_utc: Int
   let id: String
-  
 }
 
 struct Subreddit: Decodable {
   let kind: String
   let data: SubredditData
-  
 }
 
 struct SubredditData: Decodable {
