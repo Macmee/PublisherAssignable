@@ -10,7 +10,7 @@ import SwiftUI
 
 // MARK: - NestedObservableObject
 
-class NestedObservableObject: ObservableObject {
+open class NestedObservableObject: ObservableObject {
 
   private var bag = Set<AnyCancellable>()
 
@@ -31,14 +31,14 @@ class NestedObservableObject: ObservableObject {
 
 // MARK: - NestedPropertyObserver
 
-protocol DynamicPropertyObserver: DynamicProperty {
+public protocol DynamicPropertyObserver: DynamicProperty {
   mutating func objectWillChangeObserver() -> AnyPublisher<Void, Never>
 }
 
 // MARK: - @Published
 
 extension Combine.Published: DynamicPropertyObserver {
-  mutating func objectWillChangeObserver() -> AnyPublisher<Void, Never> {
+  mutating public func objectWillChangeObserver() -> AnyPublisher<Void, Never> {
     projectedValue.map({ _ in () }).eraseToAnyPublisher()
   }
 }
@@ -46,7 +46,7 @@ extension Combine.Published: DynamicPropertyObserver {
 // MARK: - @Assignable
 
 extension Assignable: DynamicPropertyObserver {
-  mutating func objectWillChangeObserver() -> AnyPublisher<Void, Never> {
+  mutating public func objectWillChangeObserver() -> AnyPublisher<Void, Never> {
     boxed.objectWillChange.eraseToAnyPublisher()
   }
 }

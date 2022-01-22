@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 @propertyWrapper
-struct Assignable<T>: DynamicProperty {
+public struct Assignable<T>: DynamicProperty {
   
   final class Box: ObservableObject {
     private var bag = Set<AnyCancellable>()
@@ -27,7 +27,7 @@ struct Assignable<T>: DynamicProperty {
   
   @ObservedObject private(set) var boxed: Box
   
-  var wrappedValue: T {
+  public var wrappedValue: T {
     get { boxed.value }
   }
   
@@ -36,13 +36,13 @@ struct Assignable<T>: DynamicProperty {
     _boxed = .init(wrappedValue: boxed)
   }
   
-  init(wrappedValue: T) {
+  public init(wrappedValue: T) {
     self.init(wrappedValue: wrappedValue, Empty<T, Never>())
   }
   
 }
 
-extension Publisher where Self.Failure == Never {
+public extension Publisher where Self.Failure == Never {
   func asAssignable() -> Assignable<Output?> {
     .init(wrappedValue: nil, self.map { Optional<Output>($0) })
   }
