@@ -25,7 +25,7 @@ struct Assignable<T>: DynamicProperty {
     }
   }
   
-  @StateObject var boxed: Box
+  @ObservedObject private(set) var boxed: Box
   
   var wrappedValue: T {
     get { boxed.value }

@@ -25,6 +25,7 @@ class SubredditViewModel: NestedObservableObject {
       .projectedValue
       .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
       .prepend(startingSubreddit)
+      .removeDuplicates()
       .map(getReddit)
       .switchToLatest()
       .replaceError(with: [])
