@@ -31,7 +31,7 @@ public struct Assignable<T>: DynamicProperty {
     get { boxed.value }
   }
   
-  init<P: Publisher>(wrappedValue: T, _ upstream: P) where P.Output == T, P.Failure == Never {
+  public init<P: Publisher>(wrappedValue: T, _ upstream: P) where P.Output == T, P.Failure == Never {
     let boxed = Box(initialValue: wrappedValue, upstream: upstream.eraseToAnyPublisher())
     _boxed = .init(wrappedValue: boxed)
   }
